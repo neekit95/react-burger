@@ -1,14 +1,26 @@
 @font-face {
-    font-family: 'JetBrains Mono';
-    font-style: normal;
-    font-weight: 700;
-    src: url("../../fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf") format("woff");
+  font-family: "JetBrains Mono";
+  font-style: normal;
+  font-weight: 700;
+  src: url("../../fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf")
+    format("woff");
 }
 a {
-    text-decoration: none;
-    color:white;
+  text-decoration: none;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+}
+div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 header {
+  position: relative;
   height: 88px;
   width: 100%;
   background-color: #1c1c21;
@@ -25,10 +37,10 @@ header {
 }
 
 .wrapper {
-    width: 1240px;
-    // padding: 0px 20px;
-    height: 56px;
-    // background-color: gold;
+  width: 1240px;
+  // padding: 0px 20px;
+  height: 56px;
+  // background-color: gold;
 }
 .navbar {
   display: flex;
@@ -39,20 +51,27 @@ header {
   height: 100%;
   /* background-color: yellow; */
 }
+
 .nav {
   display: flex;
   justify-content: center;
   align-items: center;
   height: 56px;
-//   background-color: red;
+  width: 100%;
+  //   background-color: red;
   padding: 0 20px;
   border-radius: 14px;
   &:hover {
     background-color: #35353f;
+    // p {
+    //   color: rgb(166, 208, 208);
+    // }
   }
-  
 
   p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-family: JetBrains Mono;
     font-size: 16px;
     font-style: normal;
@@ -60,4 +79,16 @@ header {
     line-height: 24px;
     padding-left: 8px;
   }
+}
+
+.a_logo {
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 300px;
+    height: 56px;
+    // background-color: yellow;
 }
