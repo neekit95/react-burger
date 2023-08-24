@@ -18,21 +18,21 @@ function BurgrerIngridients() {
           active={current === "one"}
           onClick={() => handleTabClick("one")}
         >
-          One
+          Булки
         </Tab>
         <Tab
           value="two"
           active={current === "two"}
           onClick={() => handleTabClick("two")}
         >
-          Two
+          Соусы
         </Tab>
         <Tab
           value="three"
           active={current === "three"}
           onClick={() => handleTabClick("three")}
         >
-          Three
+          Начинки
         </Tab>
       </div>
     </main>
