@@ -1,3 +1,10 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color:#F2F2F3;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -24,11 +31,11 @@ body {
   font-family: 'JetBrains Mono';
   font-style: normal;
   font-weight: 700;
-  src: url("./fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf") format("woff");
+  src: url("./fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf") format("ttf");
 }
 @font-face {
   font-family: 'JetBrains Mono Italic';
-  src: url("./fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf") format("woff");
+  src: url("./fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf") format("ttf");
 }
 a {
   text-decoration: none;

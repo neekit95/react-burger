@@ -20,19 +20,17 @@ function AppHeader() {
               <a className={appHeaderStyle.a} href="/">
                 <nav className={appHeaderStyle.nav}>
                   <ListIcon type="primary" />
-                  <p className="text text_type_main-default">Лента заказов</p>
+                  <p className={appHeaderStyle.p}>Лента заказов</p>
                 </nav>
               </a>
             </div>
             <a className={appHeaderStyle.a_logo} href="/">
-              
-                <Logo />
-              
+              <Logo />
             </a>
             <a className={appHeaderStyle.a} href="/">
               <nav className={appHeaderStyle.nav}>
                 <ProfileIcon type="primary" />
-                <p className="text text_type_main-default">Личный кабинет</p>
+                <p className={appHeaderStyle.p}>Личный кабинет</p>
               </nav>
             </a>
           </section>
