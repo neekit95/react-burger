@@ -3,6 +3,7 @@ import cardStyle from "./card.module.scss";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { Counter } from "@ya.praktikum/react-developer-burger-ui-components";
 
+
 function Card(props) {
   return (
     <div className={cardStyle.container}>
@@ -18,9 +19,9 @@ function Card(props) {
       </div>
 
       <div className={cardStyle.count}>
-        <p className="text text_type_digits-default">
+        {/* <p className="text text_type_digits-default"> */}
         <Counter count={1} size="default" />
-        </p>
+        {/* </p> */}
       </div>
     </div>
   );

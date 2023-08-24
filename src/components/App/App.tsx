@@ -2,7 +2,7 @@ import React from 'react';
 import appStyle from './App.module.css';
 import AppHeader from '../app-header/app-header';
 import BurgrerIngridients from '../burger-ingridients/burgrer-ingridients';
-import BurgerConstruction from '../burgrer-counstruction/burgrer-counstruction';
+import BurgerConstruction from '../burgrer-construction/burgrer-construction';
 
 
 function App() {
