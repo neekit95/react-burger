@@ -4,16 +4,10 @@
   align-items: center;
   max-width: 1240px;
   width: 1240px;
-  /* min-height: 900px; */
-  /* border: 1px solid red;
-   */
-   background-color: red;
+
    flex-direction: column;
 }
 
-.h2 {
-  
-}
 .main {
   display: flex;
   justify-content: space-between;
@@ -24,4 +18,5 @@
   margin-top: 88px;
   min-width: 1240px;
   min-height: 500px;
+  flex-direction: row;
 }
