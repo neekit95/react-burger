@@ -4,14 +4,15 @@
   padding: 0;
   box-sizing: border-box;
   color: #f2f2f3;
+  font-family: "JetBrains Mono", monospace;
 }
 body {
   margin: 0;
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-family: "JetBrains Mono", monospace 'Roboto', 'Oxygen',
-  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',;
+  font-family: "JetBrains Mono", monospace "Roboto", "Oxygen", "Ubuntu",
+    "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
 }
 
 code {
