@@ -77,23 +77,22 @@ function BurgrerIngridients() {
       </div>
 
       <div className={burgerIngridientsStyle.scroll}>
+
         <section className={burgerIngridientsStyle.section}>
           <h2 className={burgerIngridientsStyle.h2}>Булки</h2>
-
           <div className={burgerIngridientsStyle.products}>{bunCards}</div>
         </section>
 
         <section className={burgerIngridientsStyle.section}>
           <h2 className={burgerIngridientsStyle.h2}>Соусы</h2>
-
           <div className={burgerIngridientsStyle.products}>{sauceCards}</div>
         </section>
 
         <section className={burgerIngridientsStyle.section}>
           <h2 className={burgerIngridientsStyle.h2}>Начинки</h2>
-
           <div className={burgerIngridientsStyle.products}>{mainCards}</div>
         </section>
+        
       </div>
     </main>
   );
