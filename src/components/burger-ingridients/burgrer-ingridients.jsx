@@ -85,18 +85,18 @@ function BurgrerIngridients() {
       </section>
 
       <section className={burgerIngridientsStyle.section}>
-        <h2 className={burgerIngridientsStyle.h2}>Булки</h2>
+        <h2 className={burgerIngridientsStyle.h2}>Соусы</h2>
 
         <div className={burgerIngridientsStyle.products}>
-          {sauceCards};
+          {sauceCards}
         </div>
       </section>
 
       <section className={burgerIngridientsStyle.section}>
-        <h2 className={burgerIngridientsStyle.h2}>Булки</h2>
+        <h2 className={burgerIngridientsStyle.h2}>Начинки</h2>
 
         <div className={burgerIngridientsStyle.products}>
-          {mainCards};
+          {mainCards}
         </div>
       </section>
     </main>

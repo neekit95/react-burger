@@ -4,10 +4,11 @@
   justify-content: start;
   align-items: center;
   flex-direction: column;
-  width: 272px;
-  height: 208px;
+  min-width: 272px;
+  min-height: 208px;
 //   border: 1px solid red;
   flex-wrap: wrap;
+  cursor: pointer;
 }
 .img {
     user-select: none;
