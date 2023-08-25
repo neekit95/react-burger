@@ -19,8 +19,8 @@ function AppHeader() {
               </a>
               <a className={appHeaderStyle.a} href="/">
                 <nav className={appHeaderStyle.nav}>
-                  <ListIcon type="primary" />
-                  <p className={appHeaderStyle.p}>Лента заказов</p>
+                  <ListIcon type="secondary" />
+                  <p className={appHeaderStyle.p} style={{color:'#8585AD'}}>Лента заказов</p>
                 </nav>
               </a>
             </div>
@@ -29,8 +29,8 @@ function AppHeader() {
             </a>
             <a className={appHeaderStyle.a} href="/">
               <nav className={appHeaderStyle.nav}>
-                <ProfileIcon type="primary" />
-                <p className={appHeaderStyle.p}>Личный кабинет</p>
+                <ProfileIcon type="secondary" />
+                <p className={appHeaderStyle.p} style={{color:'#8585AD'}}>Личный кабинет</p>
               </nav>
             </a>
           </section>

@@ -32,13 +32,13 @@ function BurgrerIngridients() {
   console.log("arrSauces", arrSauces);
   console.log("arrMain", arrMain);
 
-  function addCard (arr) {
+  function addCard(arr) {
     const cards = arr.map((item) => (
-      <Card 
+      <Card
         img={item.image}
-        price = {item.price}
-        name = {item.name}
-        key = {item.id}
+        price={item.price}
+        name={item.name}
+        key={item.id}
       />
     ));
     return cards;
@@ -76,33 +76,27 @@ function BurgrerIngridients() {
         </Tab>
       </div>
 
-      <section className={burgerIngridientsStyle.section}>
-        <h2 className={burgerIngridientsStyle.h2}>Булки</h2>
+      <div className={burgerIngridientsStyle.scroll}>
+        <section className={burgerIngridientsStyle.section}>
+          <h2 className={burgerIngridientsStyle.h2}>Булки</h2>
 
-        <div className={burgerIngridientsStyle.products}>
-          {bunCards}
-        </div>
-      </section>
+          <div className={burgerIngridientsStyle.products}>{bunCards}</div>
+        </section>
 
-      <section className={burgerIngridientsStyle.section}>
-        <h2 className={burgerIngridientsStyle.h2}>Соусы</h2>
+        <section className={burgerIngridientsStyle.section}>
+          <h2 className={burgerIngridientsStyle.h2}>Соусы</h2>
 
-        <div className={burgerIngridientsStyle.products}>
-          {sauceCards}
-        </div>
-      </section>
+          <div className={burgerIngridientsStyle.products}>{sauceCards}</div>
+        </section>
 
-      <section className={burgerIngridientsStyle.section}>
-        <h2 className={burgerIngridientsStyle.h2}>Начинки</h2>
+        <section className={burgerIngridientsStyle.section}>
+          <h2 className={burgerIngridientsStyle.h2}>Начинки</h2>
 
-        <div className={burgerIngridientsStyle.products}>
-          {mainCards}
-        </div>
-      </section>
+          <div className={burgerIngridientsStyle.products}>{mainCards}</div>
+        </section>
+      </div>
     </main>
   );
 }
 
 export default BurgrerIngridients;
-
-// TODO: добавлять элементы в <Card /> через map();
