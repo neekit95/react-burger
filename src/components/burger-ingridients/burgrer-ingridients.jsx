@@ -12,26 +12,41 @@ function BurgrerIngridients() {
   // console.log(burgerData[0].image);
 
   const arrBuns = [];
-  const arrSauces =[];
-  const arrMain =[];
+  const arrSauces = [];
+  const arrMain = [];
 
-  function findTypeBurger () {
+  function findTypeBurger() {
     for (const burger of burgerData) {
-      if(burger.type ==='bun') {
+      if (burger.type === "bun") {
         arrBuns.push(burger);
-      } else if(burger.type ==='sauce') {
+      } else if (burger.type === "sauce") {
         arrSauces.push(burger);
-      } else if(burger.type ==='main') {
+      } else if (burger.type === "main") {
         arrMain.push(burger);
-      } 
+      }
     }
-  } 
+  }
   findTypeBurger();
 
-  console.log('arrBuns', arrBuns);
-  console.log('arrSauces', arrSauces);
-  console.log('arrMain', arrMain);
+  console.log("arrBuns", arrBuns);
+  console.log("arrSauces", arrSauces);
+  console.log("arrMain", arrMain);
 
+  function addCard (arr) {
+    const cards = arr.map((item) => (
+      <Card 
+        img={item.image}
+        price = {item.price}
+        name = {item.name}
+        key = {item.id}
+      />
+    ));
+    return cards;
+  }
+
+  const bunCards = addCard(arrBuns);
+  const sauceCards = addCard(arrSauces);
+  const mainCards = addCard(arrMain);
 
   return (
     <main className={burgerIngridientsStyle.main}>
@@ -65,16 +80,7 @@ function BurgrerIngridients() {
         <h2 className={burgerIngridientsStyle.h2}>Булки</h2>
 
         <div className={burgerIngridientsStyle.products}>
-          <Card
-            img={burgerData[0].image}
-            price={burgerData[0].price}
-            name={burgerData[0].name}
-          />
-          <Card
-            img={burgerData[1].image}
-            price={burgerData[1].price}
-            name={burgerData[1].name}
-          />
+          {bunCards}
         </div>
       </section>
 
@@ -82,16 +88,7 @@ function BurgrerIngridients() {
         <h2 className={burgerIngridientsStyle.h2}>Булки</h2>
 
         <div className={burgerIngridientsStyle.products}>
-          <Card
-            img={burgerData[0].image}
-            price={burgerData[0].price}
-            name={burgerData[0].name}
-          />
-          <Card
-            img={burgerData[0].image}
-            price={burgerData[0].price}
-            name={burgerData[0].name}
-          />
+          {sauceCards};
         </div>
       </section>
 
@@ -99,16 +96,7 @@ function BurgrerIngridients() {
         <h2 className={burgerIngridientsStyle.h2}>Булки</h2>
 
         <div className={burgerIngridientsStyle.products}>
-          <Card
-            img={burgerData[0].image}
-            price={burgerData[0].price}
-            name={burgerData[0].name}
-          />
-          <Card
-            img={burgerData[0].image}
-            price={burgerData[0].price}
-            name={burgerData[0].name}
-          />
+          {mainCards};
         </div>
       </section>
     </main>
