@@ -103,3 +103,7 @@ function BurgrerIngridients() {
 }
 
 export default BurgrerIngridients;
+
+
+// TODO: добавлять элементы в <Card /> через map(); 
+// TODO: сделать 3 отдельных компонента из блока section 

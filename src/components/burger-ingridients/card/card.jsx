@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import cardStyle from "./card.module.scss";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import { Counter } from "@ya.praktikum/react-developer-burger-ui-components";
-
+// import { Counter } from "@ya.praktikum/react-developer-burger-ui-components";
 
 function Card(props) {
+  const [count, setCount] = useState(0);
+
   return (
-    <div className={cardStyle.container}>
+    <div className={cardStyle.container} onClick={() => setCount(count + 1)}>
       <img className={cardStyle.img} src={props.img} alt="bun" />
 
       <div className={cardStyle.price}>
@@ -19,9 +20,7 @@ function Card(props) {
       </div>
 
       <div className={cardStyle.count}>
-        {/* <p className="text text_type_digits-default"> */}
-        <Counter count={1} size="default" />
-        {/* </p> */}
+        <p className="text text_type_digits-default">{count}</p>
       </div>
     </div>
   );
