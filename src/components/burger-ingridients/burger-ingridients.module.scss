@@ -15,7 +15,7 @@
   justify-content: center;
   align-items: start;
   width: 100%;
-border: 1px solid yellow;
+// border: 1px solid yellow;
 }
 
 .h2 {
@@ -26,30 +26,26 @@ border: 1px solid yellow;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  border: 1px solid teal;
+//   border: 1px solid teal;
   width: 100%;
+  height: 100%;
 }
 
 p {
   max-width: 272px;
 }
 .scroll {
-    // z-index: 1011 !important;
-    // position: relative;
-    // padding-top: 1030px;
-  border:1px solid red;
   display: flex;
   justify-content: flex-start;
   align-items: center;
   flex-direction: column;
   padding-right: 16px;
   max-width: 608px;
-//   height: 200px;
   min-height: 500px;
-//   height: 600px;
+  max-height: 630px;
   top: 0;
   overflow-y: auto;
-  overflow: hidden;
+  overflow-y: scroll;
   scroll-behavior: smooth;
   scroll-padding-top: 1030px;
 }
