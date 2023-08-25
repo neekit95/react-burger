@@ -9,10 +9,29 @@ function BurgrerIngridients() {
   const handleTabClick = (value) => {
     setCurrent(value);
   };
-  console.log(burgerData[0].image);
+  // console.log(burgerData[0].image);
+
   const arrBuns = [];
-  const arrSauses =[];
+  const arrSauces =[];
   const arrMain =[];
+
+  function findTypeBurger () {
+    for (const burger of burgerData) {
+      if(burger.type ==='bun') {
+        arrBuns.push(burger);
+      } else if(burger.type ==='sauce') {
+        arrSauces.push(burger);
+      } else if(burger.type ==='main') {
+        arrMain.push(burger);
+      } 
+    }
+  } 
+  findTypeBurger();
+
+  console.log('arrBuns', arrBuns);
+  console.log('arrSauces', arrSauces);
+  console.log('arrMain', arrMain);
+
 
   return (
     <main className={burgerIngridientsStyle.main}>
