@@ -3,14 +3,17 @@ import burgerIngridientsStyle from "./burger-ingridients.module.scss";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import Card from "./card/card";
 import burgerData from "../App/utilits/data";
-import bun01 from "../../images/bun-01.png";
-import bun02 from "../../images/bun-02.png";
 
 function BurgrerIngridients() {
   const [current, setCurrent] = React.useState("one");
   const handleTabClick = (value) => {
     setCurrent(value);
   };
+  console.log(burgerData[0].image);
+  const arrBuns = [];
+  const arrSauses =[];
+  const arrMain =[];
+
   return (
     <main className={burgerIngridientsStyle.main}>
       <h1 className={burgerIngridientsStyle.h1}>Соберите бургер</h1>
@@ -44,17 +47,14 @@ function BurgrerIngridients() {
 
         <div className={burgerIngridientsStyle.products}>
           <Card
-            img={bun01}
-            price="20"
-            description="Краторная булка N-200i"
-            count="1"
+            img={burgerData[0].image}
+            price={burgerData[0].price}
+            name={burgerData[0].name}
           />
-
           <Card
-            img={bun02}
-            price="20"
-            description="Флюоресцентная булка R2-D3"
-            count="1"
+            img={burgerData[1].image}
+            price={burgerData[1].price}
+            name={burgerData[1].name}
           />
         </div>
       </section>
@@ -64,17 +64,14 @@ function BurgrerIngridients() {
 
         <div className={burgerIngridientsStyle.products}>
           <Card
-            img={bun01}
-            price="20"
-            description="Краторная булка N-200i"
-            count="1"
+            img={burgerData[0].image}
+            price={burgerData[0].price}
+            name={burgerData[0].name}
           />
-
           <Card
-            img={bun02}
-            price="20"
-            description="Флюоресцентная булка R2-D3"
-            count="1"
+            img={burgerData[0].image}
+            price={burgerData[0].price}
+            name={burgerData[0].name}
           />
         </div>
       </section>
@@ -84,17 +81,14 @@ function BurgrerIngridients() {
 
         <div className={burgerIngridientsStyle.products}>
           <Card
-            img={bun01}
-            price="20"
-            description="Краторная булка N-200i"
-            count="1"
+            img={burgerData[0].image}
+            price={burgerData[0].price}
+            name={burgerData[0].name}
           />
-
           <Card
-            img={bun02}
-            price="20"
-            description="Флюоресцентная булка R2-D3"
-            count="1"
+            img={burgerData[0].image}
+            price={burgerData[0].price}
+            name={burgerData[0].name}
           />
         </div>
       </section>
@@ -104,6 +98,4 @@ function BurgrerIngridients() {
 
 export default BurgrerIngridients;
 
-
-// TODO: добавлять элементы в <Card /> через map(); 
-// TODO: сделать 3 отдельных компонента из блока section 
+// TODO: добавлять элементы в <Card /> через map();

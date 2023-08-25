@@ -16,7 +16,7 @@ function Card(props) {
       </div>
 
       <div className={cardStyle.description}>
-        <p className="text text_type_main-default">{props.description}</p>
+        <p className="text text_type_main-default">{props.name}</p>
       </div>
 
       <div className={cardStyle.count}>
