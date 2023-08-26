@@ -2,14 +2,16 @@ import React from "react";
 import burgerIngridientsStyle from "./burger-ingridients.module.scss";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import Card from "./card/card";
-import burgerData from "../App/utilits/data";
+// import burgerData from "../App/utilits/data";
 
-function BurgrerIngridients() {
+function BurgrerIngridients(props) {
+
+  let burgerData = props.burgerData;
+
   const [current, setCurrent] = React.useState("one");
   const handleTabClick = (value) => {
     setCurrent(value);
   };
-  // console.log(burgerData[0].image);
 
   const arrBuns = [];
   const arrSauces = [];

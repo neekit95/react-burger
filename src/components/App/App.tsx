@@ -3,7 +3,7 @@ import appStyle from './App.module.css';
 import AppHeader from '../app-header/app-header';
 import BurgrerIngridients from '../burger-ingridients/burgrer-ingridients';
 import BurgerConstruction from '../burgrer-construction/burgrer-construction';
-
+import burgerData from './utilits/data';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
       <div className={appStyle.wrapper}>
         <AppHeader />
         <div className={appStyle.main}>
-          <BurgrerIngridients />
+          <BurgrerIngridients burgerData = {burgerData}/>
           <BurgerConstruction />
         </div>
       </div>

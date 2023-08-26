@@ -1,7 +1,7 @@
 import React from "react";
 import burgerConstructionStyle from "./burgrer-construction.module.scss";
 import { ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-components";
-import burgerData from "../App/utilits/data";
+// import burgerData from "../App/utilits/data";
 
 function BurgerConstruction() {
 
@@ -21,6 +21,7 @@ function BurgerConstruction() {
           price={50}
           // thumbnail={img}
         />
+        
         <ConstructorElement
           type="bottom"
           isLocked={true}
@@ -28,55 +29,7 @@ function BurgerConstruction() {
           price={200}
           // thumbnail={img}
         />
-        <ConstructorElement
-          type="bottom"
-          isLocked={true}
-          text="Краторная булка N-200i (низ)"
-          price={200}
-          // thumbnail={img}
-        />
-        <ConstructorElement
-          type="bottom"
-          isLocked={true}
-          text="Краторная булка N-200i (низ)"
-          price={200}
-          // thumbnail={img}
-        />
-        <ConstructorElement
-          type="bottom"
-          isLocked={true}
-          text="Краторная булка N-200i (низ)"
-          price={200}
-          // thumbnail={img}
-        />
-        <ConstructorElement
-          type="bottom"
-          isLocked={true}
-          text="Краторная булка N-200i (низ)"
-          price={200}
-          // thumbnail={img}
-        />
-        <ConstructorElement
-          type="bottom"
-          isLocked={true}
-          text="Краторная булка N-200i (низ)"
-          price={200}
-          // thumbnail={img}
-        />
-        <ConstructorElement
-          type="bottom"
-          isLocked={true}
-          text="Краторная булка N-200i (низ)"
-          price={200}
-          // thumbnail={img}
-        />
-        <ConstructorElement
-          type="bottom"
-          isLocked={true}
-          text="Краторная булка N-200i (низ)"
-          price={200}
-          // thumbnail={img}
-        />
+        
       </div>
     </main>
   );
