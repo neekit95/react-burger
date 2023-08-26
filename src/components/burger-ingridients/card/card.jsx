@@ -5,9 +5,22 @@ import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components
 
 function Card(props) {
   const [count, setCount] = useState(0);
+  const handleCardClick = () => {
+    setCount(count + 1);
+
+    const newItem = {
+      name: props.name,
+      price: props.price,
+      image: props.img,
+      id: props._id,
+    };
+
+    // Обновление состояния burgerArr
+    props.setBurgerArr((prevArr) => [...prevArr, newItem]);
+  };
 
   return (
-    <div className={cardStyle.container} onClick={() => setCount(count + 1)}>
+    <div className={cardStyle.container} onClick={handleCardClick}>
       <img className={cardStyle.img} src={props.img} alt="bun" />
 
       <div className={cardStyle.price}>

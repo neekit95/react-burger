@@ -1,12 +1,15 @@
 import React from "react";
+// import { useState } from "react";
 import burgerIngridientsStyle from "./burger-ingridients.module.scss";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import Card from "./card/card";
 // import burgerData from "../App/utilits/data";
 
 function BurgrerIngridients(props) {
+ 
 
-  let burgerData = props.burgerData;
+
+  const burgerData = props.burgerData;
 
   const [current, setCurrent] = React.useState("one");
   const handleTabClick = (value) => {
@@ -41,6 +44,7 @@ function BurgrerIngridients(props) {
         price={item.price}
         name={item.name}
         key={item._id}
+        setBurgerArr={props.setBurgerArr}
       />
     ));
     return cards;
@@ -79,7 +83,6 @@ function BurgrerIngridients(props) {
       </div>
 
       <div className={burgerIngridientsStyle.scroll}>
-
         <section className={burgerIngridientsStyle.section}>
           <h2 className={burgerIngridientsStyle.h2}>Булки</h2>
           <div className={burgerIngridientsStyle.products}>{bunCards}</div>
@@ -94,7 +97,6 @@ function BurgrerIngridients(props) {
           <h2 className={burgerIngridientsStyle.h2}>Начинки</h2>
           <div className={burgerIngridientsStyle.products}>{mainCards}</div>
         </section>
-
       </div>
     </main>
   );
