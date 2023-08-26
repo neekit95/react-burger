@@ -1,0 +1,53 @@
+.main {
+    display: flex;
+    margin-top: 100px;
+    // border: 1px solid red;
+    width: 100%;
+    height: 100%;
+    min-height: 700px;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-left: 40px;
+    padding-left: 16px;
+    max-height: 630px;
+    overflow-y: scroll;
+}
+.scroll {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    padding-right: 16px;
+    max-width: 608px;
+    min-height: 500px;
+    max-height: 630px;
+    top: 0;
+    overflow-y: auto;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    // scroll-paddinsg-top: 1030px;
+  }
+  
+  .main::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .main::-webkit-scrollbar-thumb {
+    background-color: #8585ad;
+    border-radius: 4px; 
+  }
+  
+  .main::-webkit-scrollbar-thumb:hover {
+    background-color: #585876;
+  }
+  
+  .main::-webkit-scrollbar-track {
+      background-color: #2F2F37;
+  }
+  
+  .main {
+    scrollbar-width: thin; 
+    scrollbar-color: #8585ad #2F2F37; 
+  }
+  

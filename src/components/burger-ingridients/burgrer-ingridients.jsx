@@ -28,9 +28,9 @@ function BurgrerIngridients() {
   }
   findTypeBurger();
 
-  console.log("arrBuns", arrBuns);
-  console.log("arrSauces", arrSauces);
-  console.log("arrMain", arrMain);
+  // console.log("arrBuns", arrBuns);
+  // console.log("arrSauces", arrSauces);
+  // console.log("arrMain", arrMain);
 
   function addCard(arr) {
     const cards = arr.map((item) => (
@@ -38,7 +38,7 @@ function BurgrerIngridients() {
         img={item.image}
         price={item.price}
         name={item.name}
-        key={item.id}
+        key={item._id}
       />
     ));
     return cards;
@@ -92,7 +92,7 @@ function BurgrerIngridients() {
           <h2 className={burgerIngridientsStyle.h2}>Начинки</h2>
           <div className={burgerIngridientsStyle.products}>{mainCards}</div>
         </section>
-        
+
       </div>
     </main>
   );
