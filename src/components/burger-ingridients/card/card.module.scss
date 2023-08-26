@@ -10,6 +10,11 @@
   // flex-wrap: wrap;
   cursor: pointer;
   margin-top: 24px;
+  border-radius:20px;
+  padding: 8px;
+  &:hover {
+    background-color: #35353f;
+  }
 }
 .img {
     user-select: none;
@@ -29,8 +34,8 @@
 }
 .count {
   position: absolute;
-  right: 0;
-  top: 0;
+  right: 10px;
+  top: 10px;
   width: 32px;
   height: 32px;
   background-color: #4C4CFF;
