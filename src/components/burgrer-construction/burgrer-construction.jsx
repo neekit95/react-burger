@@ -12,21 +12,10 @@ function BurgerConstruction(props) {
 
   const displayBuns = []; // дописать логику отделения булок от остального, передать значения
 
-  // const displayBurgerArr = burgerArr.map((item) => (
-  //   <ConstructorElement
-  //     style={{}} //добавить картинку
-  //     key={item.id}
-  //     type="default"
-  //     isLocked={false}
-  //     text={item.name}
-  //     price={item.price}
-  //     thumbnail={item.image_mobile}
-  //   />
-  // )); // отсечь булки, при клике - нужно их обновлять, а не добавлять.
-
   const displayBurgerArr = burgerArr.map((item) => (
     <div className={burgerConstructionStyle.elementContainer} key={item.id}>
-      <DragIcon type="primary" style={{ position: "absolute" }} />{" "}
+      {/* не работает cursor:pointer */}
+      <DragIcon type="primary" style={{ cursor: "pointer" }} />
       <ConstructorElement
         type="default"
         isLocked={false}
@@ -36,6 +25,8 @@ function BurgerConstruction(props) {
       />
     </div>
   ));
+
+  const currentPrice = 2510; // дописать логику по цене
 
   return (
     <main className={burgerConstructionStyle.main}>
@@ -50,7 +41,6 @@ function BurgerConstruction(props) {
           }}
         >
           <ConstructorElement
-
             type="top"
             isLocked={true}
             text={`${burgerData[0].name} (верх)`}
@@ -75,7 +65,7 @@ function BurgerConstruction(props) {
           className="text text_type_digits-medium"
           style={{ marginRight: "8px" }}
         >
-          400
+          {currentPrice}
         </p>
         <CurrencyIcon type="primary" />
         <Button

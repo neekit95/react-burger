@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef} from "react";
 import burgerIngridientsStyle from "./burger-ingridients.module.scss";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import Card from "./card/card";
@@ -8,8 +8,18 @@ function BurgrerIngridients(props) {
   const burgerData = props.burgerData;
 
   const [current, setCurrent] = React.useState("one");
+  const bunRef = useRef(null);
+  const sauceRef = useRef(null);
+  const mainRef = useRef(null);
   const handleTabClick = (value) => {
     setCurrent(value);
+    if (value === "one") {
+      bunRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (value === "two") {
+      sauceRef.current.scrollIntoView({ behavior: "smooth" });
+    } else if (value === "three") {
+      mainRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   const arrBuns = [];
@@ -76,17 +86,17 @@ function BurgrerIngridients(props) {
       </div>
 
       <div className={burgerIngridientsStyle.scroll}>
-        <section className={burgerIngridientsStyle.section}>
+        <section className={burgerIngridientsStyle.section} ref={bunRef}>
           <h2 className={burgerIngridientsStyle.h2}>Булки</h2>
           <div className={burgerIngridientsStyle.products}>{bunCards}</div>
         </section>
 
-        <section className={burgerIngridientsStyle.section}>
+        <section className={burgerIngridientsStyle.section} ref={sauceRef}>
           <h2 className={burgerIngridientsStyle.h2}>Соусы</h2>
           <div className={burgerIngridientsStyle.products}>{sauceCards}</div>
         </section>
 
-        <section className={burgerIngridientsStyle.section}>
+        <section className={burgerIngridientsStyle.section} ref={mainRef}>
           <h2 className={burgerIngridientsStyle.h2}>Начинки</h2>
           <div className={burgerIngridientsStyle.products}>{mainCards}</div>
         </section>

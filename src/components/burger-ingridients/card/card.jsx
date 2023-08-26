@@ -16,7 +16,6 @@ function Card(props) {
       image_mobile: props.image_mobile
     };
 
-    // Обновление состояния burgerArr
     props.setBurgerArr((prevArr) => [...prevArr, newItem]);
   };
 
