@@ -50,12 +50,11 @@ function BurgerConstruction(props) {
           }}
         >
           <ConstructorElement
-            className={burgerConstructionStyle.constructorElement}
-            // style={{width: '90%'}}
+
             type="top"
             isLocked={true}
             text={`${burgerData[0].name} (верх)`}
-            price={200}
+            price={burgerData[0].price}
             thumbnail={burgerData[0].image_mobile}
           />
 
@@ -64,9 +63,8 @@ function BurgerConstruction(props) {
           <ConstructorElement
             type="bottom"
             isLocked={true}
-            // text="Краторная булка N-200i (низ)"
             text={`${burgerData[0].name} (низ)`}
-            price={200}
+            price={burgerData[0].price}
             thumbnail={burgerData[0].image_mobile}
           />
         </div>
