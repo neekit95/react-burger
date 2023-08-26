@@ -1,14 +1,10 @@
 import React from "react";
-// import { useState } from "react";
 import burgerIngridientsStyle from "./burger-ingridients.module.scss";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import Card from "./card/card";
-// import burgerData from "../App/utilits/data";
+
 
 function BurgrerIngridients(props) {
- 
-
-
   const burgerData = props.burgerData;
 
   const [current, setCurrent] = React.useState("one");
@@ -33,10 +29,6 @@ function BurgrerIngridients(props) {
   }
   findTypeBurger();
 
-  // console.log("arrBuns", arrBuns);
-  // console.log("arrSauces", arrSauces);
-  // console.log("arrMain", arrMain);
-
   function addCard(arr) {
     const cards = arr.map((item) => (
       <Card
@@ -45,6 +37,7 @@ function BurgrerIngridients(props) {
         name={item.name}
         key={item._id}
         setBurgerArr={props.setBurgerArr}
+        image_mobile= {item.image_mobile}
       />
     ));
     return cards;

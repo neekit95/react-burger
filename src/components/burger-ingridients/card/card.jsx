@@ -12,7 +12,8 @@ function Card(props) {
       name: props.name,
       price: props.price,
       image: props.img,
-      id: props._id,
+      id: Date.now(),
+      image_mobile: props.image_mobile
     };
 
     // Обновление состояния burgerArr
