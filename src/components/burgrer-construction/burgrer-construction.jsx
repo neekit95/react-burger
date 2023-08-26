@@ -5,6 +5,7 @@ import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components
 import burgerData from "../App/utilits/data"; // убрать, залить через props значения
 import { Button } from "@ya.praktikum/react-developer-burger-ui-components";
 import { DragIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+import PropTypes from "prop-types";
 
 function BurgerConstruction(props) {
   const burgerArr = props.burgerArr;
@@ -80,5 +81,16 @@ function BurgerConstruction(props) {
     </main>
   );
 }
+
+BurgerConstruction.propTypes = {
+  burgerArr: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number,
+      name: PropTypes.string,
+      price: PropTypes.number,
+      image_mobile: PropTypes.string,
+    })
+  ),
+};
 
 export default BurgerConstruction;

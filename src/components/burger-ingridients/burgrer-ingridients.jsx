@@ -1,8 +1,8 @@
-import React,{useRef} from "react";
+import React, { useRef } from "react";
 import burgerIngridientsStyle from "./burger-ingridients.module.scss";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import Card from "./card/card";
-
+import PropTypes from "prop-types";
 
 function BurgrerIngridients(props) {
   const burgerData = props.burgerData;
@@ -47,7 +47,7 @@ function BurgrerIngridients(props) {
         name={item.name}
         key={item._id}
         setBurgerArr={props.setBurgerArr}
-        image_mobile= {item.image_mobile}
+        image_mobile={item.image_mobile}
       />
     ));
     return cards;
@@ -104,5 +104,18 @@ function BurgrerIngridients(props) {
     </main>
   );
 }
+BurgrerIngridients.propTypes = {
+  burgerData: PropTypes.arrayOf(
+    PropTypes.shape({
+      type: PropTypes.string,
+      image: PropTypes.string,
+      price: PropTypes.number,
+      name: PropTypes.string,
+      _id: PropTypes.string,
+      image_mobile: PropTypes.string,
+    })
+  ),
+  setBurgerArr: PropTypes.func,
+};
 
 export default BurgrerIngridients;
