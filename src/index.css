@@ -3,7 +3,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* color: #f2f2f3; */
   font-family: "JetBrains Mono", monospace;
 }
 body {
@@ -13,8 +12,6 @@ body {
   -moz-osx-font-smoothing: grayscale;
   font-family: "JetBrains Mono", monospace "Roboto", "Oxygen", "Ubuntu",
     "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue";
-    /* max-height: 100vh;
-    overflow: hidden; */
 }
 
 code {
@@ -27,19 +24,8 @@ body {
   display: flex;
   justify-content: center;
   align-items: start;
-  min-height: 1000px;
 }
 
-/* @font-face {
-  font-family: 'JetBrains Mono';
-  font-style: normal;
-  font-weight: 700;
-  src: url("./fonts/JetBrains_Mono/JetBrainsMono-VariableFont_wght.ttf") format("ttf");
-} */
-/* @font-face {
-  font-family: 'JetBrains Mono Italic';
-  src: url("./fonts/JetBrains_Mono/JetBrainsMono-Italic-VariableFont_wght.ttf") format("ttf");
-} */
 a {
   text-decoration: none;
   color: white;

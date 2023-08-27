@@ -48,7 +48,9 @@ function BurgrerIngridients(props) {
         name={item.name}
         key={item._id}
         setBurgerArr={props.setBurgerArr}
+        setBun = {props.setBun}
         image_mobile={item.image_mobile}
+        type={item.type}
       />
     ));
     return cards;
@@ -106,9 +108,9 @@ function BurgrerIngridients(props) {
   );
 }
 
-BurgrerIngridients.propTypes = {
-  burgerData: PropTypes.arrayOf(ingredientType).isRequired,
-  setBurgerArr: PropTypes.func.isRequired,
-};
+// BurgrerIngridients.propTypes = {
+//   burgerData: PropTypes.arrayOf(ingredientType).isRequired,
+//   setBurgerArr: PropTypes.func.isRequired,
+// };
 
 export default BurgrerIngridients;

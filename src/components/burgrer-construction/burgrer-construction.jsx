@@ -11,22 +11,22 @@ import { ingredientType } from "../../utilits/types";
 
 function BurgerConstruction(props) {
   const burgerArr = props.burgerArr;
-  console.log(burgerArr);
+  const bun = props.bun;
 
   const scrollContainerRef = useRef(null);
-
   useEffect(() => {
     if (scrollContainerRef.current) {
       scrollContainerRef.current.scrollTop =
         scrollContainerRef.current.scrollHeight;
     }
-  }, [burgerArr]);  // задаем скролл вниз 
-
-  // const displayBuns = []; // дописать логику отделения булок от остального, передать значения
+  }, [burgerArr]); // задаем скролл вниз
 
   const displayBurgerArr = burgerArr.map((item) => (
     <div className={burgerConstructionStyle.elementContainer} key={item.id}>
-      <DragIcon type="primary" />
+      <DragIcon
+        type="primary"
+        className={burgerConstructionStyle.dragIconPrimary}
+      />
       <ConstructorElement
         extraClass={burgerConstructionStyle.constructorElement}
         type="default"
@@ -38,20 +38,41 @@ function BurgerConstruction(props) {
     </div>
   ));
 
-  const currentPrice = 2510; // дописать логику по цене
+  const displayBunTop = bun.map((item) => (
+    <div className={burgerConstructionStyle.elementContainerBun} key={item.id}>
+      <ConstructorElement
+        extraClass={burgerConstructionStyle.constructorElementBun}
+        type="top"
+        isLocked={false}
+        text={item.name}
+        price={item.price}
+        thumbnail={item.image_mobile}
+      />
+    </div>
+  ));
+  const displayBunBottom = bun.map((item) => (
+    <div className={burgerConstructionStyle.elementContainerBun} key={item.id}>
+      <ConstructorElement
+        extraClass={burgerConstructionStyle.constructorElementBun}
+        type="bottom"
+        isLocked={false}
+        text={item.name}
+        price={item.price}
+        thumbnail={item.image_mobile}
+      />
+    </div>
+  ));
+
+  // function deleteElementFromBurgerArr () {
+  // } TODO: дописать: при клике на кнопку удалить из массива элемент
+
+  const currentPrice = 2510; // TODO: дописать логику по цене
 
   return (
     <main className={burgerConstructionStyle.main}>
       <section className={burgerConstructionStyle.all}>
         <div className={burgerConstructionStyle.yandexDiv}>
-          <ConstructorElement
-            extraClass={burgerConstructionStyle.constructorElement}
-            type="top"
-            isLocked={true}
-            text={`${burgerData[0].name} (верх)`}
-            price={burgerData[0].price}
-            thumbnail={burgerData[0].image_mobile}
-          />
+          {displayBunTop}
 
           <div
             className={burgerConstructionStyle.scroll}
@@ -59,15 +80,7 @@ function BurgerConstruction(props) {
           >
             {displayBurgerArr}
           </div>
-
-          <ConstructorElement
-            extraClass={burgerConstructionStyle.constructorElement}
-            type="bottom"
-            isLocked={true}
-            text={`${burgerData[0].name} (низ)`}
-            price={burgerData[0].price}
-            thumbnail={burgerData[0].image_mobile}
-          />
+          {displayBunBottom}
         </div>
       </section>
 
@@ -87,8 +100,8 @@ function BurgerConstruction(props) {
   );
 }
 
-BurgerConstruction.propTypes = {
-  burgerArr: PropTypes.arrayOf(ingredientType),
-};
+// BurgerConstruction.propTypes = {
+//   burgerArr: PropTypes.arrayOf(ingredientType),
+// };
 
 export default BurgerConstruction;

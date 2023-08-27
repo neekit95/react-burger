@@ -16,9 +16,16 @@ function Card(props) {
       image: props.img,
       id: Date.now(),
       image_mobile: props.image_mobile,
+      type: props.type
     };
 
-    props.setBurgerArr((prevArr) => [...prevArr, newItem]);
+
+    if (newItem.type === 'bun') {
+      props.setBun([newItem]); 
+    } else {
+      props.setBurgerArr((prevArr) => [...prevArr, newItem]);
+    }
+
   };
 
   return (
@@ -41,8 +48,8 @@ function Card(props) {
   );
 }
 
-Card.propTypes = {
-  burgerArr: PropTypes.arrayOf(ingredientType),
-  setBurgerArr: PropTypes.func,
-};
+// Card.propTypes = {
+//   burgerArr: PropTypes.arrayOf(ingredientType),
+//   setBurgerArr: PropTypes.func,
+// };
 export default Card;
