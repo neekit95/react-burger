@@ -12,12 +12,13 @@ function BurgerConstruction(props) {
   const burgerArr = props.burgerArr;
   console.log(burgerArr);
 
-  const displayBuns = []; // дописать логику отделения булок от остального, передать значения
+  // const displayBuns = []; // дописать логику отделения булок от остального, передать значения
 
   const displayBurgerArr = burgerArr.map((item) => (
     <div className={burgerConstructionStyle.elementContainer} key={item.id}>
       <DragIcon type="primary" />
       <ConstructorElement
+        extraClass={burgerConstructionStyle.constructorElement}
         type="default"
         isLocked={false}
         text={item.name}
@@ -31,9 +32,10 @@ function BurgerConstruction(props) {
 
   return (
     <main className={burgerConstructionStyle.main}>
-      <section className={burgerConstructionStyle.scroll}>
+      <section className={burgerConstructionStyle.all}>
         <div className={burgerConstructionStyle.yandexDiv}>
           <ConstructorElement
+            extraClass={burgerConstructionStyle.constructorElement}
             type="top"
             isLocked={true}
             text={`${burgerData[0].name} (верх)`}
@@ -41,9 +43,13 @@ function BurgerConstruction(props) {
             thumbnail={burgerData[0].image_mobile}
           />
 
+          <div className={burgerConstructionStyle.scroll}>
           {displayBurgerArr}
+          </div>
+          
 
           <ConstructorElement
+            extraClass={burgerConstructionStyle.constructorElement}
             type="bottom"
             isLocked={true}
             text={`${burgerData[0].name} (низ)`}
