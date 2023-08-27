@@ -9,7 +9,8 @@ import burgerData from '../../utilits/data';
 function App() {
   const beginBun = burgerData[0]
   const [burgerArr, setBurgerArr] = useState([]);
-  const [bun, setBun] = useState([beginBun, beginBun])
+  const [bun, setBun] = useState([beginBun, beginBun]);
+
 
   return (
 
@@ -17,17 +18,9 @@ function App() {
       <AppHeader />
       <main className={appStyle.main}>
 
-        {/* <BurgrerIngridients
-          burgerData={burgerData}
-          setBurgerArr={setBurgerArr}
-        />
-        <BurgerConstruction
-          burgerArr={burgerArr}
-        /> */}
-
         <BurgrerIngridients
           burgerData={burgerData}
-          setBun = {setBun}
+          setBun={setBun}
           setBurgerArr={setBurgerArr}
         />
         <BurgerConstruction
@@ -42,3 +35,7 @@ function App() {
 
 export default App;
 
+//TODO: доделать счетчики на булки
+//TODO: дописать логику по цене
+//TODO: дописать логику перемещения tab вместе со скролом
+//TODO: дописать логику удаления из массива burgerArr по кнопке

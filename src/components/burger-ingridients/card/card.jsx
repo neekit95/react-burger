@@ -7,7 +7,13 @@ import { ingredientType } from "../../../utilits/types";
 
 function Card(props) {
   const [count, setCount] = useState(0);
+  const [visible, setVisible] =useState(false);
+
+
   const handleCardClick = () => {
+    
+
+
     setCount(count + 1);
 
     const newItem = {
@@ -16,7 +22,7 @@ function Card(props) {
       image: props.img,
       id: Date.now(),
       image_mobile: props.image_mobile,
-      type: props.type
+      type: props.type,
     };
     const newItem2 = {
       name: props.name,
@@ -24,17 +30,14 @@ function Card(props) {
       image: props.img,
       id: Date.now() + 1,
       image_mobile: props.image_mobile,
-      type: props.type
+      type: props.type,
     };
 
-
-    if (newItem.type === 'bun') {
-      // props.setBun([newItem]); 
-      props.setBun([newItem, newItem2]); 
+    if (newItem.type === "bun") {
+      props.setBun([newItem, newItem2]);
     } else {
       props.setBurgerArr((prevArr) => [...prevArr, newItem]);
     }
-
   };
 
   return (
@@ -57,8 +60,9 @@ function Card(props) {
   );
 }
 
-// Card.propTypes = {
-//   burgerArr: PropTypes.arrayOf(ingredientType),
-//   setBurgerArr: PropTypes.func,
-// };
+Card.propTypes = {
+  burgerArr: PropTypes.arrayOf(ingredientType),
+  setBurgerArr: PropTypes.func,
+  setBun: PropTypes.func
+};
 export default Card;

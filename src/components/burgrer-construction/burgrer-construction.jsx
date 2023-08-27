@@ -3,7 +3,6 @@ import { useEffect, useRef } from "react";
 import burgerConstructionStyle from "./burgrer-construction.module.scss";
 import { ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-components";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import burgerData from "../../utilits/data"; // убрать, залить через props значения
 import { Button } from "@ya.praktikum/react-developer-burger-ui-components";
 import { DragIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import PropTypes from "prop-types";
@@ -110,8 +109,9 @@ function BurgerConstruction(props) {
   );
 }
 
-// BurgerConstruction.propTypes = {
-//   burgerArr: PropTypes.arrayOf(ingredientType),
-// };
+BurgerConstruction.propTypes = {
+  burgerArr: PropTypes.arrayOf(ingredientType),
+  bun: PropTypes.arrayOf(ingredientType)
+};
 
 export default BurgerConstruction;
