@@ -41,6 +41,11 @@
   min-width: 580px;
   svg {
     cursor: pointer;
+    border-radius:5px;
+    fill:  #6e6e6e;
+    &:hover {
+      fill:  #ffffff;
+    }
   }
 }
 .constructorElement {
