@@ -3,6 +3,7 @@ import burgerIngridientsStyle from "./burger-ingridients.module.scss";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import Card from "./card/card";
 import PropTypes from "prop-types";
+import { ingredientType } from "../../utilits/types";
 
 function BurgrerIngridients(props) {
   const burgerData = props.burgerData;
@@ -61,7 +62,7 @@ function BurgrerIngridients(props) {
     <main className={burgerIngridientsStyle.main}>
       <h1 className={burgerIngridientsStyle.h1}>Соберите бургер</h1>
 
-      <div className={burgerIngridientsStyle.tab} style={{ display: "flex" }}>
+      <div className={burgerIngridientsStyle.tab}>
         <Tab
           value="one"
           active={current === "one"}
@@ -104,18 +105,10 @@ function BurgrerIngridients(props) {
     </main>
   );
 }
+
 BurgrerIngridients.propTypes = {
-  burgerData: PropTypes.arrayOf(
-    PropTypes.shape({
-      type: PropTypes.string,
-      image: PropTypes.string,
-      price: PropTypes.number,
-      name: PropTypes.string,
-      _id: PropTypes.string,
-      image_mobile: PropTypes.string,
-    })
-  ),
-  setBurgerArr: PropTypes.func,
+  burgerData: PropTypes.arrayOf(ingredientType).isRequired,
+  setBurgerArr: PropTypes.func.isRequired,
 };
 
 export default BurgrerIngridients;

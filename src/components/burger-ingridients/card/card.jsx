@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import cardStyle from "./card.module.scss";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 // import { Counter } from "@ya.praktikum/react-developer-burger-ui-components";
+import PropTypes from "prop-types";
+import { ingredientType } from "../../../utilits/types";
 
 function Card(props) {
   const [count, setCount] = useState(0);
@@ -13,7 +15,7 @@ function Card(props) {
       price: props.price,
       image: props.img,
       id: Date.now(),
-      image_mobile: props.image_mobile
+      image_mobile: props.image_mobile,
     };
 
     props.setBurgerArr((prevArr) => [...prevArr, newItem]);
@@ -21,7 +23,7 @@ function Card(props) {
 
   return (
     <div className={cardStyle.container} onClick={handleCardClick}>
-      <img className={cardStyle.img} src={props.img} alt="bun" />
+      <img className={cardStyle.img} src={props.img} alt={props.name} />
 
       <div className={cardStyle.price}>
         <p className="text text_type_digits-default">{props.price}</p>
@@ -39,4 +41,8 @@ function Card(props) {
   );
 }
 
+Card.propTypes = {
+  burgerArr: PropTypes.arrayOf(ingredientType),
+  setBurgerArr: PropTypes.func,
+};
 export default Card;

@@ -2,10 +2,11 @@ import React from "react";
 import burgerConstructionStyle from "./burgrer-construction.module.scss";
 import { ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-components";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import burgerData from "../App/utilits/data"; // убрать, залить через props значения
+import burgerData from "../../utilits/data"; // убрать, залить через props значения
 import { Button } from "@ya.praktikum/react-developer-burger-ui-components";
 import { DragIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import PropTypes from "prop-types";
+import { ingredientType } from "../../utilits/types";
 
 function BurgerConstruction(props) {
   const burgerArr = props.burgerArr;
@@ -15,8 +16,7 @@ function BurgerConstruction(props) {
 
   const displayBurgerArr = burgerArr.map((item) => (
     <div className={burgerConstructionStyle.elementContainer} key={item.id}>
-      {/* не работает cursor:pointer */}
-      <DragIcon type="primary" style={{ cursor: "pointer" }} />
+      <DragIcon type="primary" />
       <ConstructorElement
         type="default"
         isLocked={false}
@@ -32,15 +32,7 @@ function BurgerConstruction(props) {
   return (
     <main className={burgerConstructionStyle.main}>
       <section className={burgerConstructionStyle.scroll}>
-        <div
-          style={{
-            display: "flex",
-            flexDirection: "column",
-            gap: "10px",
-            justifyContent: "center",
-            alignItems: "flex-end",
-          }}
-        >
+        <div className={burgerConstructionStyle.yandexDiv}>
           <ConstructorElement
             type="top"
             isLocked={true}
@@ -62,18 +54,13 @@ function BurgerConstruction(props) {
       </section>
 
       <section className={burgerConstructionStyle.price}>
-        <p
-          className="text text_type_digits-medium"
-          style={{ marginRight: "8px" }}
-        >
-          {currentPrice}
-        </p>
+        <p className="text text_type_digits-medium mr-2">{currentPrice}</p>
         <CurrencyIcon type="primary" />
         <Button
+          extraClass="ml-10"
           htmlType="button"
           type="primary"
           size="medium"
-          style={{ marginLeft: "40px" }}
         >
           Оформить заказ
         </Button>
@@ -83,14 +70,7 @@ function BurgerConstruction(props) {
 }
 
 BurgerConstruction.propTypes = {
-  burgerArr: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number,
-      name: PropTypes.string,
-      price: PropTypes.number,
-      image_mobile: PropTypes.string,
-    })
-  ),
+  burgerArr: PropTypes.arrayOf(ingredientType),
 };
 
 export default BurgerConstruction;
