@@ -1,4 +1,5 @@
 import React from "react";
+import { useEffect, useRef } from "react";
 import burgerConstructionStyle from "./burgrer-construction.module.scss";
 import { ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-components";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
@@ -11,6 +12,15 @@ import { ingredientType } from "../../utilits/types";
 function BurgerConstruction(props) {
   const burgerArr = props.burgerArr;
   console.log(burgerArr);
+
+  const scrollContainerRef = useRef(null);
+
+  useEffect(() => {
+    if (scrollContainerRef.current) {
+      scrollContainerRef.current.scrollTop =
+        scrollContainerRef.current.scrollHeight;
+    }
+  }, [burgerArr]);  // задаем скролл вниз 
 
   // const displayBuns = []; // дописать логику отделения булок от остального, передать значения
 
@@ -43,10 +53,12 @@ function BurgerConstruction(props) {
             thumbnail={burgerData[0].image_mobile}
           />
 
-          <div className={burgerConstructionStyle.scroll}>
-          {displayBurgerArr}
+          <div
+            className={burgerConstructionStyle.scroll}
+            ref={scrollContainerRef}
+          >
+            {displayBurgerArr}
           </div>
-          
 
           <ConstructorElement
             extraClass={burgerConstructionStyle.constructorElement}
