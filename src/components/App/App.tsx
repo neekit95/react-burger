@@ -9,7 +9,7 @@ import burgerData from '../../utilits/data';
 function App() {
   const beginBun = burgerData[0]
   const [burgerArr, setBurgerArr] = useState([]);
-  const [bun, setBun] = useState([beginBun])
+  const [bun, setBun] = useState([beginBun, beginBun])
 
   return (
 

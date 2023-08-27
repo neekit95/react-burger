@@ -18,10 +18,19 @@ function Card(props) {
       image_mobile: props.image_mobile,
       type: props.type
     };
+    const newItem2 = {
+      name: props.name,
+      price: props.price,
+      image: props.img,
+      id: Date.now() + 1,
+      image_mobile: props.image_mobile,
+      type: props.type
+    };
 
 
     if (newItem.type === 'bun') {
-      props.setBun([newItem]); 
+      // props.setBun([newItem]); 
+      props.setBun([newItem, newItem2]); 
     } else {
       props.setBurgerArr((prevArr) => [...prevArr, newItem]);
     }

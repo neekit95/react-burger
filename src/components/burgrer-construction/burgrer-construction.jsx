@@ -38,30 +38,39 @@ function BurgerConstruction(props) {
     </div>
   ));
 
-  const displayBunTop = bun.map((item) => (
-    <div className={burgerConstructionStyle.elementContainerBun} key={item.id}>
+  const displayBunTop = (
+    <div
+      className={burgerConstructionStyle.elementContainerBun}
+      key={bun[0].id}
+    >
       <ConstructorElement
         extraClass={burgerConstructionStyle.constructorElementBun}
         type="top"
         isLocked={false}
-        text={item.name}
-        price={item.price}
-        thumbnail={item.image_mobile}
+        text={bun[0].name}
+        price={bun[0].price}
+        thumbnail={bun[0].image_mobile}
       />
     </div>
-  ));
-  const displayBunBottom = bun.map((item) => (
-    <div className={burgerConstructionStyle.elementContainerBun} key={item.id}>
+  );
+  const displayBunBottom = (
+    <div
+      className={burgerConstructionStyle.elementContainerBun}
+      key={bun[1].id}
+    >
       <ConstructorElement
         extraClass={burgerConstructionStyle.constructorElementBun}
         type="bottom"
         isLocked={false}
-        text={item.name}
-        price={item.price}
-        thumbnail={item.image_mobile}
+        text={bun[1].name}
+        price={bun[1].price}
+        thumbnail={bun[1].image_mobile}
       />
     </div>
-  ));
+  );
+
+
+
 
   // function deleteElementFromBurgerArr () {
   // } TODO: дописать: при клике на кнопку удалить из массива элемент
@@ -80,6 +89,7 @@ function BurgerConstruction(props) {
           >
             {displayBurgerArr}
           </div>
+
           {displayBunBottom}
         </div>
       </section>
