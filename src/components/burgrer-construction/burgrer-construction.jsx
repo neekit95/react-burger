@@ -67,10 +67,6 @@ function BurgerConstruction(props) {
       />
     </div>
   );
-
-
-
-
   // function deleteElementFromBurgerArr () {
   // } TODO: дописать: при клике на кнопку удалить из массива элемент
 
