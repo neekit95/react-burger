@@ -1,5 +1,5 @@
 import React, { useRef } from "react";
-import burgerIngridientsStyle from "./burger-ingridients.module.scss";
+import burgerIngredientsStyle from "./burger-ingredients.module.scss";
 import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import Card from "./card/card";
 import PropTypes from "prop-types";
@@ -61,10 +61,10 @@ function BurgrerIngridients(props) {
   const mainCards = addCard(arrMain);
 
   return (
-    <main className={burgerIngridientsStyle.main}>
-      <h1 className={burgerIngridientsStyle.h1}>Соберите бургер</h1>
+    <main className={burgerIngredientsStyle.main}>
+      <h1 className={burgerIngredientsStyle.h1}>Соберите бургер</h1>
 
-      <div className={burgerIngridientsStyle.tab}>
+      <div className={burgerIngredientsStyle.tab}>
         <Tab
           value="one"
           active={current === "one"}
@@ -88,20 +88,20 @@ function BurgrerIngridients(props) {
         </Tab>
       </div>
 
-      <div className={burgerIngridientsStyle.scroll}>
-        <section className={burgerIngridientsStyle.section} ref={bunRef}>
-          <h2 className={burgerIngridientsStyle.h2}>Булки</h2>
-          <div className={burgerIngridientsStyle.products}>{bunCards}</div>
+      <div className={burgerIngredientsStyle.scroll}>
+        <section className={burgerIngredientsStyle.section} ref={bunRef}>
+          <h2 className={burgerIngredientsStyle.h2}>Булки</h2>
+          <div className={burgerIngredientsStyle.products}>{bunCards}</div>
         </section>
 
-        <section className={burgerIngridientsStyle.section} ref={sauceRef}>
-          <h2 className={burgerIngridientsStyle.h2}>Соусы</h2>
-          <div className={burgerIngridientsStyle.products}>{sauceCards}</div>
+        <section className={burgerIngredientsStyle.section} ref={sauceRef}>
+          <h2 className={burgerIngredientsStyle.h2}>Соусы</h2>
+          <div className={burgerIngredientsStyle.products}>{sauceCards}</div>
         </section>
 
-        <section className={burgerIngridientsStyle.section} ref={mainRef}>
-          <h2 className={burgerIngridientsStyle.h2}>Начинки</h2>
-          <div className={burgerIngridientsStyle.products}>{mainCards}</div>
+        <section className={burgerIngredientsStyle.section} ref={mainRef}>
+          <h2 className={burgerIngredientsStyle.h2}>Начинки</h2>
+          <div className={burgerIngredientsStyle.products}>{mainCards}</div>
         </section>
       </div>
     </main>

@@ -1,12 +1,12 @@
 import React from "react";
 import { useEffect, useRef } from "react";
-import burgerConstructionStyle from "./burgrer-construction.module.scss";
+import burgerConstructionStyle from "./burger-construction.module.scss";
 import { ConstructorElement } from "@ya.praktikum/react-developer-burger-ui-components";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { Button } from "@ya.praktikum/react-developer-burger-ui-components";
 import { DragIcon } from "@ya.praktikum/react-developer-burger-ui-components";
-import PropTypes from "prop-types";
 import { ingredientType } from "../../utilits/types";
+import PropTypes from "prop-types";
 
 function BurgerConstruction(props) {
   const burgerArr = props.burgerArr;
