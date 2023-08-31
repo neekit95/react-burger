@@ -7,13 +7,9 @@ import { ingredientType } from "../../../utilits/types";
 
 function Card(props) {
   const [count, setCount] = useState(0);
-  const [visible, setVisible] =useState(false);
-
+  // const [visible, setVisible] =useState(false);
 
   const handleCardClick = () => {
-    
-
-
     setCount(count + 1);
 
     const newItem = {
@@ -63,6 +59,6 @@ function Card(props) {
 Card.propTypes = {
   burgerArr: PropTypes.arrayOf(ingredientType),
   setBurgerArr: PropTypes.func,
-  setBun: PropTypes.func
+  setBun: PropTypes.func,
 };
 export default Card;

@@ -7,7 +7,8 @@ import { ingredientType } from "../../utilits/types";
 
 function BurgrerIngridients(props) {
   const burgerData = props.burgerData;
-
+  console.log("BurgrerIngridients --> burgerData:", burgerData);
+  
   const [current, setCurrent] = React.useState("one");
   const bunRef = useRef(null);
   const sauceRef = useRef(null);
@@ -111,7 +112,7 @@ function BurgrerIngridients(props) {
 BurgrerIngridients.propTypes = {
   burgerData: PropTypes.arrayOf(ingredientType),
   setBurgerArr: PropTypes.func,
-  setBun:PropTypes.func
+  setBun: PropTypes.func,
 };
 
 export default BurgrerIngridients;
