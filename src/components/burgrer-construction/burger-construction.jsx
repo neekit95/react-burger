@@ -11,7 +11,7 @@ import PropTypes from "prop-types";
 function BurgerConstruction(props) {
   const burgerArr = props.burgerArr;
   const bun = props.bun;
-  console.log(` BurgerConstruction --> burgerArr: ${burgerArr}`);
+  // console.log(` BurgerConstruction --> burgerArr: ${burgerArr}`);
 
   const scrollContainerRef = useRef(null);
   useEffect(() => {

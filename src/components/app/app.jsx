@@ -34,7 +34,9 @@ function App() {
         } else {
           setBun([{}, {}]);
         }
-
+        // setTimeout(() => {
+        //   setLoading(false);
+        // }, 2000);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -50,7 +52,7 @@ function App() {
       <AppHeader />
       <main className={appStyle.main}>
         {loading ? (
-          <p>Loading...</p>
+          <p className={appStyle.loading}>Loading...</p>
         ) : (
           <>
             <BurgrerIngridients

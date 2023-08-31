@@ -7,7 +7,7 @@ import { ingredientType } from "../../utilits/types";
 
 function BurgrerIngridients(props) {
   const burgerData = props.burgerData;
-  console.log("BurgrerIngridients --> burgerData:", burgerData);
+  // console.log("BurgrerIngridients --> burgerData:", burgerData);
   
   const [current, setCurrent] = React.useState("one");
   const bunRef = useRef(null);
