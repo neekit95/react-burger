@@ -1,13 +1,17 @@
-.main {
+.overlay {
     display: flex;
     justify-content: center;
     align-items: center;
     position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
     width: 100vw;
     height: 100vh;
-    z-index: 2;
+    z-index: 2 ;
     overflow: hidden;
     opacity: 60%;
     background-color: rgba(0, 0, 0, 0.60);
+    // background-color: teal;
     
 }
