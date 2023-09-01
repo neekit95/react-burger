@@ -3,10 +3,10 @@ import ingredientModalStyle from './ingredient-details.module.scss'
 
 const IngredientDetails = ({ ingredient }) => {
   return (
-    <div className="IngredientDetails">
+    <main className={ingredientModalStyle.main}>
       <h2>Детали ингредиента</h2>
       <p>Ингредиент: {ingredient}</p>
-    </div>
+    </main>
   );
 };
 

@@ -56,6 +56,7 @@ function BurgerConstruction(props) {
     <div
       className={burgerConstructionStyle.elementContainerBun}
       key={bun[0].id}
+      onClick={() => handleOpenModal(bun[0].name)} 
     >
       <ConstructorElement
         extraClass={burgerConstructionStyle.constructorElementBun}
@@ -64,6 +65,8 @@ function BurgerConstruction(props) {
         text={bun[0].name}
         price={bun[0].price}
         thumbnail={bun[0].image_mobile}
+        handleCloseModal= {handleCloseModal}
+        handleOpenModal= {handleOpenModal}
       />
     </div>
   );
@@ -71,6 +74,7 @@ function BurgerConstruction(props) {
     <div
       className={burgerConstructionStyle.elementContainerBun}
       key={bun[1].id}
+      onClick={() => handleOpenModal(bun[1].name)} 
     >
       <ConstructorElement
         extraClass={burgerConstructionStyle.constructorElementBun}
@@ -79,6 +83,8 @@ function BurgerConstruction(props) {
         text={bun[1].name}
         price={bun[1].price}
         thumbnail={bun[1].image_mobile}
+        handleCloseModal= {handleCloseModal}
+        handleOpenModal= {handleOpenModal}
       />
     </div>
   );
