@@ -8,13 +8,17 @@ import { DragIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { ingredientType } from "../../utilits/types";
 import PropTypes from "prop-types";
 import IngredientDetails from "../modal-window/ingredient-details/ingredient-details";
+import OrderDetails from "../modal-window/order-details/order-details";
 
 function BurgerConstruction(props) {
   const burgerArr = props.burgerArr;
   const bun = props.bun;
-  const handleOpenModal = (item) => {
+  const handleOpenModalIngredients = (item) => {
     props.handleOpenModal(<IngredientDetails ingredient={item} />);
   };
+  const handleOpenModalOrder = (id) => {
+    props.handleOpenModal(<OrderDetails id={id} />)
+  }
 
   const handleCloseModal = () => {
     props.handleCloseModal();
@@ -33,7 +37,7 @@ function BurgerConstruction(props) {
     <div
       className={burgerConstructionStyle.elementContainer}
       key={item.id}
-      onClick={() => handleOpenModal(item)}
+      onClick={() => handleOpenModalIngredients(item)}
     >
       <DragIcon
         type="primary"
@@ -47,11 +51,11 @@ function BurgerConstruction(props) {
         thumbnail={item.image_mobile}
         isLocked={false}
         extraClass={burgerConstructionStyle.constructorElement}
-        
+
         // image={item.image}
         // image_large={item.image_large}
         handleCloseModal={handleCloseModal}
-        handleOpenModal={handleOpenModal}
+        handleOpenModal={handleOpenModalIngredients}
       />
       {console.log(item.image)}
     </div>
@@ -62,7 +66,7 @@ function BurgerConstruction(props) {
     <div
       className={burgerConstructionStyle.elementContainerBun}
       key={bun[0].id}
-      onClick={() => handleOpenModal(bun[0])}
+      onClick={() => handleOpenModalIngredients(bun[0])}
     >
       <ConstructorElement
         extraClass={burgerConstructionStyle.constructorElementBun}
@@ -72,7 +76,7 @@ function BurgerConstruction(props) {
         price={bun[0].price}
         thumbnail={bun[0].image_mobile}
         handleCloseModal={handleCloseModal}
-        handleOpenModal={handleOpenModal}
+        handleOpenModal={handleOpenModalIngredients}
       />
             {/* {console.log(bun[1].proteins)} */}
 
@@ -82,7 +86,7 @@ function BurgerConstruction(props) {
     <div
       className={burgerConstructionStyle.elementContainerBun}
       key={bun[1].id}
-      onClick={() => handleOpenModal(bun[1])}
+      onClick={() => handleOpenModalIngredients(bun[1])}
     >
       <ConstructorElement
         extraClass={burgerConstructionStyle.constructorElementBun}
@@ -92,7 +96,7 @@ function BurgerConstruction(props) {
         price={bun[1].price}
         thumbnail={bun[1].image_mobile}
         handleCloseModal={handleCloseModal}
-        handleOpenModal={handleOpenModal}
+        handleOpenModal={handleOpenModalIngredients}
       />
     </div>
   );
@@ -126,6 +130,7 @@ function BurgerConstruction(props) {
           htmlType="button"
           type="primary"
           size="medium"
+          onClick={() => handleOpenModalOrder('034536')}
         >
           Оформить заказ
         </Button>

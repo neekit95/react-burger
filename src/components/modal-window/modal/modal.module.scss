@@ -5,6 +5,7 @@
   z-index: 4;
   display: flex;
   min-width: 720px;
+  min-height: 538px;
   // height: 718px;
   justify-content: start;
   align-items: start;
@@ -16,7 +17,7 @@
 
 .ModalOverlay {
   // cursor: pointer;
-   overflow: hidden;
+  overflow: hidden;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -29,7 +30,7 @@
   height: 100vh;
   z-index: 3;
   // background-color: #000000;
-  opacity: 60;
+  // opacity: 60%;
 }
 .button {
   display: flex;
@@ -38,7 +39,7 @@
   position: absolute;
   right: 30px;
   top: 50px;
-  border-radius:50%;
+  border-radius: 50%;
   background-color: transparent;
   cursor: pointer;
   padding: 10px 10px 10px 10px;

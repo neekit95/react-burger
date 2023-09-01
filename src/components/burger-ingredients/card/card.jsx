@@ -53,16 +53,16 @@ function Card(props) {
       <img className={cardStyle.img} src={props.img} alt={props.name} />
 
       <div className={cardStyle.price}>
-        <p className="text text_type_digits-default">{props.price}</p>
+      <p className={`${cardStyle.p} text text_type_main-default`}>{props.price}</p>
         <CurrencyIcon />
       </div>
 
       <div className={cardStyle.description}>
-        <p className="text text_type_main-default">{props.name}</p>
+        <p className={`${cardStyle.p} text text_type_main-default`}>{props.name}</p>
       </div>
 
       <div className={cardStyle.count}>
-        <p className="text text_type_digits-default">{count}</p>
+      <p className={`${cardStyle.p} text text_type_main-default`}>{count}</p>
       </div>
     </div>
   );
