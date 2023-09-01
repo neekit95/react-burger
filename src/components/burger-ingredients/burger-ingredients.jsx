@@ -7,6 +7,9 @@ import { ingredientType } from "../../utilits/types";
 
 function BurgrerIngridients(props) {
   const burgerData = props.burgerData;
+  // const handleOpenModal = props.handleOpenModal;
+  // const handleCloseModal = props.handleCloseModal;
+
   // console.log("BurgrerIngridients --> burgerData:", burgerData);
   
   const [current, setCurrent] = React.useState("one");
@@ -52,6 +55,8 @@ function BurgrerIngridients(props) {
         setBun={props.setBun}
         image_mobile={item.image_mobile}
         type={item.type}
+        // handleCloseModal={item.handleCloseModal}
+        // handleOpenModal={item.handleOpenModal}
       />
     ));
     return cards;

@@ -70,12 +70,18 @@ function App() {
               burgerData={burgerData}
               setBun={setBun}
               setBurgerArr={setBurgerArr}
+             
             />
-            <BurgerConstruction burgerArr={burgerArr} bun={bun} />
+            <BurgerConstruction
+              burgerArr={burgerArr} 
+              bun={bun} 
+              handleOpenModal={handleOpenModal}
+              handleCloseModal={handleCloseModal}
+              />
           </>
         )}
 
-        <div>
+        {/* <div>
           <button
             style={{
               width: "300",
@@ -89,10 +95,12 @@ function App() {
             open
           </button>
 
+        </div> */}
+
+
           {modalContent && (
             <Modal onClose={handleCloseModal}>{modalContent}</Modal>
           )}
-        </div>
       </main>
     </div>
   );

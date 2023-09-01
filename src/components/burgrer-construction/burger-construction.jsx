@@ -7,11 +7,19 @@ import { Button } from "@ya.praktikum/react-developer-burger-ui-components";
 import { DragIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import { ingredientType } from "../../utilits/types";
 import PropTypes from "prop-types";
+import IngredientDetails from "../modal-window/ingredient-details/ingredient-details";
 
 function BurgerConstruction(props) {
   const burgerArr = props.burgerArr;
   const bun = props.bun;
-  // console.log(` BurgerConstruction --> burgerArr: ${burgerArr}`);
+  const handleOpenModal = () => {
+    props.handleOpenModal(<IngredientDetails ingredient={'123'} />);
+  };
+  
+  const handleCloseModal = () => {
+    props.handleCloseModal();
+  };
+  
 
   const scrollContainerRef = useRef(null);
   useEffect(() => {
@@ -22,7 +30,11 @@ function BurgerConstruction(props) {
   }, [burgerArr]); // задаем скролл вниз
 
   const displayBurgerArr = burgerArr.map((item) => (
-    <div className={burgerConstructionStyle.elementContainer} key={item.id}>
+    <div 
+      className={burgerConstructionStyle.elementContainer} 
+      key={item.id}
+      onClick={handleOpenModal}
+      >
       <DragIcon
         type="primary"
         className={burgerConstructionStyle.dragIconPrimary}
@@ -34,6 +46,8 @@ function BurgerConstruction(props) {
         text={item.name}
         price={item.price}
         thumbnail={item.image_mobile}
+        handleCloseModal= {handleCloseModal}
+        handleOpenModal= {handleOpenModal}
       />
     </div>
   ));
