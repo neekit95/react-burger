@@ -1,4 +1,5 @@
 import React from 'react';
+import ingredientModalStyle from './ingredient-details.module.scss'
 
 const IngredientDetails = ({ ingredient }) => {
   return (

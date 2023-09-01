@@ -12,8 +12,8 @@ import IngredientDetails from "../modal-window/ingredient-details/ingredient-det
 function BurgerConstruction(props) {
   const burgerArr = props.burgerArr;
   const bun = props.bun;
-  const handleOpenModal = () => {
-    props.handleOpenModal(<IngredientDetails ingredient={'123'} />);
+  const handleOpenModal = (item) => {
+    props.handleOpenModal(<IngredientDetails ingredient={item} />);
   };
   
   const handleCloseModal = () => {
@@ -33,7 +33,7 @@ function BurgerConstruction(props) {
     <div 
       className={burgerConstructionStyle.elementContainer} 
       key={item.id}
-      onClick={handleOpenModal}
+      onClick={() => handleOpenModal(item.name)}      
       >
       <DragIcon
         type="primary"
