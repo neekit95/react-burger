@@ -73,6 +73,16 @@ function Card(props) {
 }
 
 Card.propTypes = {
+  name: PropTypes.string,
+  type: PropTypes.string,
+  proteins: PropTypes.number,
+  price: PropTypes.number,
+  fat: PropTypes.number,
+  carbohydrates: PropTypes.number,
+  calories: PropTypes.number,
+  img: PropTypes.string,
+  image_mobile: PropTypes.string,
+  image_large: PropTypes.string,
   setBurgerArr: PropTypes.func,
   setBun: PropTypes.func,
 };
