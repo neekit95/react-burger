@@ -7,11 +7,6 @@ import { ingredientType } from "../../utilits/types";
 
 function BurgrerIngridients(props) {
   const burgerData = props.burgerData;
-  // const handleOpenModal = props.handleOpenModal;
-  // const handleCloseModal = props.handleCloseModal;
-
-  // console.log("BurgrerIngridients --> burgerData:", burgerData);
-  
   const [current, setCurrent] = React.useState("one");
   const bunRef = useRef(null);
   const sauceRef = useRef(null);
@@ -47,18 +42,23 @@ function BurgrerIngridients(props) {
   function addCard(arr) {
     const cards = arr.map((item) => (
       <Card
+        id={item._id}
+        name={item.name}
+        type={item.type}
+        proteins={item.proteins}
+        fat={item.fat}
+        carbohydrates={item.carbohydrates}
+        calories={item.calories}
         img={item.image}
         price={item.price}
-        name={item.name}
         key={item._id}
+        image_mobile={item.image_mobile}
+        image_large={item.image_large}
+
         setBurgerArr={props.setBurgerArr}
         setBun={props.setBun}
-        image_mobile={item.image_mobile}
-        type={item.type}
-        // handleCloseModal={item.handleCloseModal}
-        // handleOpenModal={item.handleOpenModal}
-      />
-    ));
+        />
+      ));
     return cards;
   }
 

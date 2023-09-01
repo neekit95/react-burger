@@ -13,20 +13,32 @@ function Card(props) {
     setCount(count + 1);
 
     const newItem = {
-      name: props.name,
-      price: props.price,
-      image: props.img,
       id: Date.now(),
-      image_mobile: props.image_mobile,
+      name: props.name,
       type: props.type,
+      proteins: props.proteins,
+      price: props.price,
+      fat: props.fat,
+      carbohydrates: props.carbohydrates,
+      calories: props.calories,
+      // image: props.img,
+      image: props.image,
+      image_mobile: props.image_mobile,
+      image_large: props.image_large
     };
     const newItem2 = {
+      id: Date.now() +1,
       name: props.name,
-      price: props.price,
-      image: props.img,
-      id: Date.now() + 1,
-      image_mobile: props.image_mobile,
       type: props.type,
+      proteins: props.proteins,
+      price: props.price,
+      fat: props.fat,
+      carbohydrates: props.carbohydrates,
+      calories: props.calories,
+      // image: props.img,
+      image: props.image,
+      image_mobile: props.image_mobile,
+      image_large: props.image_large
     };
 
     if (newItem.type === "bun") {

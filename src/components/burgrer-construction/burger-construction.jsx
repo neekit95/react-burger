@@ -15,11 +15,10 @@ function BurgerConstruction(props) {
   const handleOpenModal = (item) => {
     props.handleOpenModal(<IngredientDetails ingredient={item} />);
   };
-  
+
   const handleCloseModal = () => {
     props.handleCloseModal();
   };
-  
 
   const scrollContainerRef = useRef(null);
   useEffect(() => {
@@ -30,33 +29,40 @@ function BurgerConstruction(props) {
   }, [burgerArr]); // задаем скролл вниз
 
   const displayBurgerArr = burgerArr.map((item) => (
-    <div 
-      className={burgerConstructionStyle.elementContainer} 
+      
+    <div
+      className={burgerConstructionStyle.elementContainer}
       key={item.id}
-      onClick={() => handleOpenModal(item.name)}      
-      >
+      onClick={() => handleOpenModal(item)}
+    >
       <DragIcon
         type="primary"
         className={burgerConstructionStyle.dragIconPrimary}
       />
       <ConstructorElement
-        extraClass={burgerConstructionStyle.constructorElement}
-        type="default"
-        isLocked={false}
+        id={item.id}
         text={item.name}
+        type="default"
         price={item.price}
         thumbnail={item.image_mobile}
-        handleCloseModal= {handleCloseModal}
-        handleOpenModal= {handleOpenModal}
+        isLocked={false}
+        extraClass={burgerConstructionStyle.constructorElement}
+        
+        // image={item.image}
+        // image_large={item.image_large}
+        handleCloseModal={handleCloseModal}
+        handleOpenModal={handleOpenModal}
       />
+      {console.log(item.image)}
     </div>
+    
   ));
 
   const displayBunTop = (
     <div
       className={burgerConstructionStyle.elementContainerBun}
       key={bun[0].id}
-      onClick={() => handleOpenModal(bun[0].name)} 
+      onClick={() => handleOpenModal(bun[0])}
     >
       <ConstructorElement
         extraClass={burgerConstructionStyle.constructorElementBun}
@@ -65,16 +71,18 @@ function BurgerConstruction(props) {
         text={bun[0].name}
         price={bun[0].price}
         thumbnail={bun[0].image_mobile}
-        handleCloseModal= {handleCloseModal}
-        handleOpenModal= {handleOpenModal}
+        handleCloseModal={handleCloseModal}
+        handleOpenModal={handleOpenModal}
       />
+            {/* {console.log(bun[1].proteins)} */}
+
     </div>
   );
   const displayBunBottom = (
     <div
       className={burgerConstructionStyle.elementContainerBun}
       key={bun[1].id}
-      onClick={() => handleOpenModal(bun[1].name)} 
+      onClick={() => handleOpenModal(bun[1])}
     >
       <ConstructorElement
         extraClass={burgerConstructionStyle.constructorElementBun}
@@ -83,8 +91,8 @@ function BurgerConstruction(props) {
         text={bun[1].name}
         price={bun[1].price}
         thumbnail={bun[1].image_mobile}
-        handleCloseModal= {handleCloseModal}
-        handleOpenModal= {handleOpenModal}
+        handleCloseModal={handleCloseModal}
+        handleOpenModal={handleOpenModal}
       />
     </div>
   );
@@ -128,7 +136,7 @@ function BurgerConstruction(props) {
 
 BurgerConstruction.propTypes = {
   burgerArr: PropTypes.arrayOf(ingredientType),
-  bun: PropTypes.arrayOf(ingredientType)
+  bun: PropTypes.arrayOf(ingredientType),
 };
 
 export default BurgerConstruction;

@@ -12,7 +12,7 @@ function App() {
   const [bun, setBun] = useState([]);
   const [burgerData, setBurgerData] = useState([]);
   const [loading, setLoading] = useState(true);
-  
+
   const [modalContent, setModalContent] = useState(null);
   const handleOpenModal = (content) => {
     setModalContent(content);
@@ -70,37 +70,18 @@ function App() {
               burgerData={burgerData}
               setBun={setBun}
               setBurgerArr={setBurgerArr}
-             
             />
             <BurgerConstruction
-              burgerArr={burgerArr} 
-              bun={bun} 
+              burgerArr={burgerArr}
+              bun={bun}
               handleOpenModal={handleOpenModal}
               handleCloseModal={handleCloseModal}
-              />
+            />
           </>
         )}
-
-        {/* <div>
-          <button
-            style={{
-              width: "300",
-              height: 333,
-              backgroundColor: "yellow",
-              cursor: "pointer",
-              marginRight: 20,
-            }}
-            onClick={() => handleOpenModal(<OrderDetails order="Заказ #123" />)}
-          >
-            open
-          </button>
-
-        </div> */}
-
-
-          {modalContent && (
-            <Modal onClose={handleCloseModal}>{modalContent}</Modal>
-          )}
+        {modalContent && (
+          <Modal onClose={handleCloseModal}>{modalContent}</Modal>
+        )}
       </main>
     </div>
   );

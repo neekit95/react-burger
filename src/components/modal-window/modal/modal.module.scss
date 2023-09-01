@@ -1,20 +1,24 @@
 .modal {
+  overflow: hidden;
   position: relative;
   flex-direction: column;
   z-index: 4;
   display: flex;
-  width: 720px;
-  height: 718px;
-  justify-content: center;
-  align-items: center;
+  min-width: 720px;
+  // height: 718px;
+  justify-content: start;
+  align-items: start;
   flex-shrink: 0;
   border-radius: 40px;
   background-color: #1c1c21;
+  // background-color: red;
 }
 
 .ModalOverlay {
+  // cursor: pointer;
+   overflow: hidden;
   position: absolute;
- left: 50%;
+  left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -24,14 +28,30 @@
   width: 100vw;
   height: 100vh;
   z-index: 3;
+  // background-color: #000000;
+  opacity: 60;
 }
 .button {
   display: flex;
   justify-content: center;
   align-items: center;
   position: absolute;
-  right: 40px;
-  top: 60px;
+  right: 30px;
+  top: 50px;
+  border-radius:50%;
   background-color: transparent;
   cursor: pointer;
+  padding: 10px 10px 10px 10px;
+  border: 1px transparent;
+  transition: border 0.33s linear;
+
+  // background-color: red;
+  &:hover {
+    // svg {
+    //   fill: rgb(186, 65, 65);
+    // }
+    border: 1px solid rgb(255, 255, 255);
+    transition: border 0.33s linear;
+    // translate: 10px 10px 10px 10px;
+  }
 }
