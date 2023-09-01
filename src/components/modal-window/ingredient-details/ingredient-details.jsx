@@ -1,5 +1,6 @@
 import React from "react";
 import ingredientModalStyle from "./ingredient-details.module.scss";
+import { ingredientType } from "../../../utilits/types";
 
 const IngredientDetails = ({ ingredient }) => {
   return (
@@ -37,6 +38,9 @@ const IngredientDetails = ({ ingredient }) => {
       </section>
     </main>
   );
+};
+IngredientDetails.propTypes = {
+  ingredient: ingredientType.isRequired,
 };
 
 export default IngredientDetails;

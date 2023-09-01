@@ -1,7 +1,8 @@
 import React from "react";
 import orderStyle from "./order-details.module.scss";
-import { CheckMarkIcon } from "@ya.praktikum/react-developer-burger-ui-components";
+// import { CheckMarkIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import done from "../../../images/done.png";
+import PropTypes from 'prop-types';
 
 const OrderDetails = ({ id }) => {
   return (
@@ -19,5 +20,7 @@ const OrderDetails = ({ id }) => {
     </main>
   );
 };
-
+OrderDetails.propTypes = {
+  id: PropTypes.string
+};
 export default OrderDetails;
