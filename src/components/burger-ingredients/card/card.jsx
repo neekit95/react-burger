@@ -4,16 +4,31 @@ import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components
 import PropTypes from "prop-types";
 // import { Counter } from "@ya.praktikum/react-developer-burger-ui-components";
 // import { ingredientType } from "../../../utilits/types";
+import IngredientDetails from "../../modal-window/ingredient-details/ingredient-details";
 
 function Card(props) {
+  // const handleOpenModalIngredients = (item) => {
+  //   props.handleOpenModal(<IngredientDetails ingredient={item} />);
+  // };
+ 
+
+  // const handleCloseModal = () => {
+  //   props.handleCloseModal();
+  // };
+  
   const [count, setCount] = useState(0);
-  // const [visible, setVisible] =useState(false);
 
   const handleCardClick = () => {
+
     setCount(count + 1);
+    // const handleOpenModal = (item) => {
+    //   props.handleOpenModal(<IngredientDetails ingredient={item} />);
+    // };
+   
 
     const newItem = {
       id: Date.now(),
+      _id: props._id,
       name: props.name,
       type: props.type,
       proteins: props.proteins,
@@ -22,12 +37,15 @@ function Card(props) {
       carbohydrates: props.carbohydrates,
       calories: props.calories,
       // image: props.img,
-      image: props.image,
+      img: props.img,
       image_mobile: props.image_mobile,
       image_large: props.image_large,
+      // handleOpenModalIngredients: props.handleOpenModalIngredients
     };
     const newItem2 = {
       id: Date.now() + 1,
+      _id: props._id,
+
       name: props.name,
       type: props.type,
       proteins: props.proteins,
@@ -36,7 +54,7 @@ function Card(props) {
       carbohydrates: props.carbohydrates,
       calories: props.calories,
       // image: props.img,
-      image: props.image,
+      img: props.img,
       image_mobile: props.image_mobile,
       image_large: props.image_large,
     };
@@ -46,10 +64,13 @@ function Card(props) {
     } else {
       props.setBurgerArr((prevArr) => [...prevArr, newItem]);
     }
+    const ingredientDetailsComponent = <IngredientDetails ingredient={newItem} />;
+    props.handleOpenModal(ingredientDetailsComponent);
+    console.log("Modal opened with item:", newItem);
   };
 
   return (
-    <div className={cardStyle.container} onClick={handleCardClick}>
+    <div className={cardStyle.container} onClick={()=>{handleCardClick()}}>
       <img className={cardStyle.img} src={props.img} alt={props.name} />
 
       <div className={cardStyle.price}>

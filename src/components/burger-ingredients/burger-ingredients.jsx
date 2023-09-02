@@ -4,6 +4,8 @@ import { Tab } from "@ya.praktikum/react-developer-burger-ui-components";
 import Card from "./card/card";
 import PropTypes from "prop-types";
 import { ingredientType } from "../../utilits/types";
+// import IngredientDetails from "../modal-window/ingredient-details/ingredient-details";
+
 
 function BurgrerIngridients(props) {
   const burgerData = props.burgerData;
@@ -11,6 +13,16 @@ function BurgrerIngridients(props) {
   const bunRef = useRef(null);
   const sauceRef = useRef(null);
   const mainRef = useRef(null);
+
+  const handleOpenModal = (content) => {
+    props.handleOpenModal(content);
+  };
+ 
+
+  // const handleCloseModal = () => {
+  //   props.handleCloseModal();
+  // };
+
   const handleTabClick = (value) => {
     setCurrent(value);
     if (value === "one") {
@@ -42,7 +54,7 @@ function BurgrerIngridients(props) {
   function addCard(arr) {
     const cards = arr.map((item) => (
       <Card
-        id={item._id}
+        _id={item._id}
         name={item.name}
         type={item.type}
         proteins={item.proteins}
@@ -51,14 +63,17 @@ function BurgrerIngridients(props) {
         calories={item.calories}
         img={item.image}
         price={item.price}
+        // key={item._id}
         key={item._id}
         image_mobile={item.image_mobile}
         image_large={item.image_large}
-
         setBurgerArr={props.setBurgerArr}
         setBun={props.setBun}
-        />
-      ));
+        // onClick={() => handleOpenModalIngredients(item)}
+        // handleCloseModal={handleCloseModal}
+        handleOpenModal={handleOpenModal}
+      />
+    ));
     return cards;
   }
 
@@ -118,6 +133,7 @@ BurgrerIngridients.propTypes = {
   burgerData: PropTypes.arrayOf(ingredientType),
   setBurgerArr: PropTypes.func,
   setBun: PropTypes.func,
+  
 };
 
 export default BurgrerIngridients;

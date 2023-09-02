@@ -7,10 +7,11 @@ import PropTypes from 'prop-types';
 
 const Modal = ({ children, onClose }) => {
   const modalRoot = document.getElementById("modals");
+ 
 
   useEffect(() => {
     const handleKeyDown = (event) => {
-      if (event.keyCode === 27) {
+      if (event.key === 'Escape') {
         onClose();
       }
     };
@@ -21,6 +22,9 @@ const Modal = ({ children, onClose }) => {
     };
 
   },[onClose]);
+
+  console.log("Modal is open"); 
+  console.log("Modal content:", children);
 
   return ReactDOM.createPortal(
     <div className={modalStyle.ModalOverlay}>

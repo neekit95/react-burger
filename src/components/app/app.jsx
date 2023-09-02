@@ -7,16 +7,17 @@ import OrderDetails from "../modal-window/order-details/order-details";
 import Modal from "../modal-window/modal/modal";
 
 function App() {
-  const API_URL = "https://norma.nomoreparties.space/api/ingredients";
   const [burgerArr, setBurgerArr] = useState([]);
   const [bun, setBun] = useState([]);
+  const API_URL = "https://norma.nomoreparties.space/api/ingredients";
   const [burgerData, setBurgerData] = useState([]);
   const [loading, setLoading] = useState(true);
-
   const [modalContent, setModalContent] = useState(null);
+
   const handleOpenModal = (content) => {
     setModalContent(content);
   };
+
   const handleCloseModal = () => {
     setModalContent(null);
   };
@@ -25,11 +26,12 @@ function App() {
     const fetchData = async () => {
       try {
         setLoading(true);
-
         const response = await fetch(API_URL);
+
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
+
         const data = await response.json();
         console.log("Fetched data:", data.data);
 
@@ -44,16 +46,12 @@ function App() {
         } else {
           setBun([{}, {}]);
         }
-        // setTimeout(() => {
-        //   setLoading(false);
-        // }, 2000);
         setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
         setLoading(false);
       }
     };
-
     fetchData();
   }, []);
 
@@ -70,12 +68,14 @@ function App() {
               burgerData={burgerData}
               setBun={setBun}
               setBurgerArr={setBurgerArr}
+              handleOpenModal={handleOpenModal}
+              // handleCloseModal={handleCloseModal}
             />
             <BurgerConstruction
               burgerArr={burgerArr}
               bun={bun}
               handleOpenModal={handleOpenModal}
-              handleCloseModal={handleCloseModal}
+              // handleCloseModal={handleCloseModal}
             />
           </>
         )}
