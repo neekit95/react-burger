@@ -71,8 +71,8 @@ function BurgerConstruction(props) {
       <ConstructorElement
         extraClass={burgerConstructionStyle.constructorElementBun}
         type="top"
-        isLocked={false}
-        text={bun[0].name}
+        isLocked={true}
+        text={`${bun[0].name} (верх)`}
         price={bun[0].price}
         thumbnail={bun[0].image_mobile}
         handleCloseModal={handleCloseModal}
@@ -91,8 +91,8 @@ function BurgerConstruction(props) {
       <ConstructorElement
         extraClass={burgerConstructionStyle.constructorElementBun}
         type="bottom"
-        isLocked={false}
-        text={bun[1].name}
+        isLocked={true}
+        text={`${bun[1].name} (низ)`}
         price={bun[1].price}
         thumbnail={bun[1].image_mobile}
         handleCloseModal={handleCloseModal}
