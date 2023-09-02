@@ -2,29 +2,13 @@ import React, { useState } from "react";
 import cardStyle from "./card.module.scss";
 import { CurrencyIcon } from "@ya.praktikum/react-developer-burger-ui-components";
 import PropTypes from "prop-types";
-// import { Counter } from "@ya.praktikum/react-developer-burger-ui-components";
-// import { ingredientType } from "../../../utilits/types";
 import IngredientDetails from "../../modal-window/ingredient-details/ingredient-details";
 
 function Card(props) {
-  // const handleOpenModalIngredients = (item) => {
-  //   props.handleOpenModal(<IngredientDetails ingredient={item} />);
-  // };
- 
-
-  // const handleCloseModal = () => {
-  //   props.handleCloseModal();
-  // };
-  
   const [count, setCount] = useState(0);
 
   const handleCardClick = () => {
-
     setCount(count + 1);
-    // const handleOpenModal = (item) => {
-    //   props.handleOpenModal(<IngredientDetails ingredient={item} />);
-    // };
-   
 
     const newItem = {
       id: Date.now(),
@@ -40,7 +24,6 @@ function Card(props) {
       img: props.img,
       image_mobile: props.image_mobile,
       image_large: props.image_large,
-      // handleOpenModalIngredients: props.handleOpenModalIngredients
     };
     const newItem2 = {
       id: Date.now() + 1,
@@ -64,13 +47,20 @@ function Card(props) {
     } else {
       props.setBurgerArr((prevArr) => [...prevArr, newItem]);
     }
-    const ingredientDetailsComponent = <IngredientDetails ingredient={newItem} />;
+    const ingredientDetailsComponent = (
+      <IngredientDetails ingredient={newItem} />
+    );
     props.handleOpenModal(ingredientDetailsComponent);
     console.log("Modal opened with item:", newItem);
   };
 
   return (
-    <div className={cardStyle.container} onClick={()=>{handleCardClick()}}>
+    <div
+      className={cardStyle.container}
+      onClick={() => {
+        handleCardClick();
+      }}
+    >
       <img className={cardStyle.img} src={props.img} alt={props.name} />
 
       <div className={cardStyle.price}>
@@ -106,6 +96,7 @@ Card.propTypes = {
   image_large: PropTypes.string,
   setBurgerArr: PropTypes.func,
   setBun: PropTypes.func,
+  handleOpenModal: PropTypes.func,
 };
 
 export default Card;

@@ -3,7 +3,7 @@ import appStyle from "./app.module.css";
 import AppHeader from "../app-header/app-header";
 import BurgrerIngridients from "../burger-ingredients/burger-ingredients";
 import BurgerConstruction from "../burgrer-construction/burger-construction";
-import OrderDetails from "../modal-window/order-details/order-details";
+// import OrderDetails from "../modal-window/order-details/order-details";
 import Modal from "../modal-window/modal/modal";
 
 function App() {
@@ -46,11 +46,10 @@ function App() {
         } else {
           setBun([{}, {}]);
         }
-        setLoading(false);
       } catch (error) {
         console.error("Error fetching data:", error);
-        setLoading(false);
       }
+      setLoading(false);
     };
     fetchData();
   }, []);

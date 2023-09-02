@@ -23,7 +23,7 @@ const Modal = ({ children, onClose }) => {
 
   },[onClose]);
 
-  console.log("Modal is open"); 
+  // console.log("Modal is open"); 
   console.log("Modal content:", children);
 
   return ReactDOM.createPortal(
