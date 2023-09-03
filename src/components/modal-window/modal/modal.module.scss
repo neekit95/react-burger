@@ -1,0 +1,62 @@
+.modal {
+  overflow: hidden;
+  position: relative;
+  flex-direction: column;
+  z-index: 4;
+  display: flex;
+  min-width: 720px;
+  min-height: 538px;
+  // height: 718px;
+  justify-content: start;
+  align-items: start;
+  flex-shrink: 0;
+  border-radius: 40px;
+  background-color: #1c1c21;
+  // background-color: red;
+}
+
+.ModalOverlay {
+  // cursor: pointer;
+  overflow: hidden;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  z-index: 3;
+  // background-color: #000000;
+  // opacity: 60%;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: 30px;
+  top: 50px;
+  border-radius: 50%;
+  background-color: transparent;
+  cursor: pointer;
+  padding: 10px 10px 10px 10px;
+  // border: 1px transparent;
+  svg {
+    fill: rgb(255, 255, 255);
+    transition: fill 0.33s linear;
+  }
+  // transition: border 0.33s linear;
+
+  // background-color: red;
+  &:hover {
+    svg {
+      fill: rgb(135, 44, 44);
+      transition: fill 0.33s linear;
+    }
+    // border: 1px solid rgb(255, 255, 255);
+    // translate: 10px 10px 10px 10px;
+  }
+}

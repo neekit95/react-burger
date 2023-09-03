@@ -1,0 +1,44 @@
+.container {
+  position: relative;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  min-width: 272px;
+  min-height: 208px;
+  cursor: pointer;
+  margin-top: 24px;
+  border-radius: 20px;
+  padding: 8px;
+  &:hover {
+    background-color: #35353f;
+  }
+}
+.img {
+  user-select: none;
+  -webkit-user-drag: none;
+}
+.price {
+  margin-top: 8px;
+  text-align: center;
+  p {
+    margin-right: 8px;
+  }
+}
+
+.description {
+  margin-top: 8px;
+  text-align: center;
+}
+.count {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  width: 32px;
+  height: 32px;
+  background-color: #4c4cff;
+  border-radius: 50%;
+}
+.p {
+  max-width: 272px;
+}

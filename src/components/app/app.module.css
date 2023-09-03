@@ -1,0 +1,31 @@
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 1240px;
+  width: 1240px;
+  flex-direction: column;
+}
+
+.main {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  width: 100%;
+  height: 100%;
+  margin-top: 88px;
+  min-width: 1240px;
+  min-height: 500px;
+  flex-direction: row;
+}
+
+.loading {
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+  /* background-color: teal; */
+  margin-top: 40vh;
+}
